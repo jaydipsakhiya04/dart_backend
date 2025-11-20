@@ -1,0 +1,257 @@
+{
+    "info": {
+      "_postman_id": "jaydip_dart_e_commerce_api",
+      "name": "Jaydip Dart Shelf E-commerce API",
+      "description": "Complete Postman collection for the Dart + Shelf + SQLite3 REST API (Users, Products, Orders)",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Users",
+        "description": "User management endpoints",
+        "item": [
+          {
+            "name": "Get All Users",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/api/user/getAllUsers",
+                "host": ["{{baseUrl}}"],
+                "path": ["api", "user", "getAllUsers"]
+              },
+              "description": "Returns list of all registered users"
+            }
+          },
+          {
+            "name": "Get User by ID",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/api/user/getUser/1",
+                "host": ["{{baseUrl}}"],
+                "path": ["api", "user", "getUser", "1"]
+              },
+              "description": "Replace `:id` with actual user ID"
+            }
+          },
+          {
+            "name": "Create New User",
+            "request": {
+              "method": "POST",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@example.com\",\n  \"phone\": \"+1234567890\"\n}"
+              },
+              "url": {
+                "raw": "{{baseUrl}}/api/user/createUser",
+                "host": ["{{baseUrl}}"],
+                "path": ["api", "user", "createUser"]
+              },
+              "description": "Creates a new user (createdAt is auto-filled)"
+            }
+          },
+          {
+            "name": "Update User",
+            "request": {
+              "method": "PUT",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"name\": \"John Updated\",\n  \"email\": \"john.updated@example.com\",\n  \"phone\": \"+1999999999\"\n}"
+              },
+              "url": {
+                "raw": "{{baseUrl}}/api/user/updateUser/1",
+                "host": ["{{baseUrl}}"],
+                "path": ["api", "user", "updateUser", "1"]
+              },
+              "description": "Replace `:id` with actual user ID"
+            }
+          },
+          {
+            "name": "Delete User",
+            "request": {
+              "method": "DELETE",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/api/user/deleteUser/1",
+                "host": ["{{baseUrl}}"],
+                "path": ["api", "user", "deleteUser", "1"]
+              },
+              "description": "Replace `:id` with actual user ID"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Products",
+        "description": "Product catalog endpoints",
+        "item": [
+          {
+            "name": "Get All Products",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/api/product/getAllProducts",
+                "host": ["{{baseUrl}}"],
+                "path": ["api", "product", "getAllProducts"]
+              }
+            }
+          },
+          {
+            "name": "Get Product by ID",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/api/product/getProduct/1",
+                "host": ["{{baseUrl}}"],
+                "path": ["api", "product", "getProduct", "1"]
+              }
+            }
+          },
+          {
+            "name": "Create Product",
+            "request": {
+              "method": "POST",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"title\": \"Laptop Pro\",\n  \"description\": \"High-performance laptop\",\n  \"price\": 1299.99,\n  \"stock\": 15,\n  \"category\": \"Electronics\"\n}"
+              },
+              "url": {
+                "raw": "{{baseUrl}}/api/product/createProduct",
+                "host": ["{{baseUrl}}"],
+                "path": ["api", "product", "createProduct"]
+              }
+            }
+          },
+          {
+            "name": "Update Product",
+            "request": {
+              "method": "PUT",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"title\": \"Laptop Pro 2025\",\n  \"description\": \"Updated model\",\n  \"price\": 1399.99,\n  \"stock\": 10,\n  \"category\": \"Electronics\"\n}"
+              },
+              "url": {
+                "raw": "{{baseUrl}}/api/product/updateProduct/1",
+                "host": ["{{baseUrl}}"],
+                "path": ["api", "product", "updateProduct", "1"]
+              }
+            }
+          },
+          {
+            "name": "Delete Product",
+            "request": {
+              "method": "DELETE",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/api/product/deleteProduct/1",
+                "host": ["{{baseUrl}}"],
+                "path": ["api", "product", "deleteProduct", "1"]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "Orders",
+        "description": "Order management endpoints",
+        "item": [
+          {
+            "name": "Get All Orders",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/api/order/getAllOrders",
+                "host": ["{{baseUrl}}"],
+                "path": ["api", "order", "getAllOrders"]
+              }
+            }
+          },
+          {
+            "name": "Get Order by ID",
+            "request": {
+              "method": "GET",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/api/order/getOrder/1",
+                "host": ["{{baseUrl}}"],
+                "path": ["api", "order", "getOrder", "1"]
+              }
+            }
+          },
+          {
+            "name": "Create Order",
+            "request": {
+              "method": "POST",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"userId\": 1,\n  \"productId\": 2,\n  \"quantity\": 3,\n  \"totalAmount\": 389.97,\n  \"status\": \"pending\"\n}"
+              },
+              "url": {
+                "raw": "{{baseUrl}}/api/order/createOrder",
+                "host": ["{{baseUrl}}"],
+                "path": ["api", "order", "createOrder"]
+              },
+              "description": "orderDate is automatically set to now"
+            }
+          },
+          {
+            "name": "Update Order",
+            "request": {
+              "method": "PUT",
+              "header": [
+                { "key": "Content-Type", "value": "application/json" }
+              ],
+              "body": {
+                "mode": "raw",
+                "raw": "{\n  \"userId\": 1,\n  \"productId\": 2,\n  \"quantity\": 5,\n  \"totalAmount\": 649.95,\n  \"status\": \"shipped\"\n}"
+              },
+              "url": {
+                "raw": "{{baseUrl}}/api/order/updateOrder/1",
+                "host": ["{{baseUrl}}"],
+                "path": ["api", "order", "updateOrder", "1"]
+              }
+            }
+          },
+          {
+            "name": "Delete Order",
+            "request": {
+              "method": "DELETE",
+              "header": [],
+              "url": {
+                "raw": "{{baseUrl}}/api/order/deleteOrder/1",
+                "host": ["{{baseUrl}}"],
+                "path": ["api", "order", "deleteOrder", "1"]
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "variable": [
+      {
+        "key": "baseUrl",
+        "value": "http://localhost:8080",
+        "description": "Change to your server URL (e.g., http://192.168.1.100:8080 or your deployed domain)"
+      }
+    ]
+  }
